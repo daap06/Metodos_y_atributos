@@ -10,7 +10,7 @@ print(f"""Los atributos de la clase son:
 
 lista_salsas = ["salsa de tomate", "salsa bbq"]
 
-print(f" Requerimiento B: {Pizza.casos_posibles('salsa de tomate', lista=lista_salsas)}\n")
+print(f" Requerimiento B: {Pizza.casos_posibles('salsa de tomate',lista_salsas)}\n")
 
 ##### Requerimiento C ############
 
@@ -31,6 +31,6 @@ print(f"""Usted eligió los siguientes ingredientes:
     """)
 
 # ##### Requerimiento E ############
-
+print(pedido.pizza_valida)
 print(Pizza.pizza_valida)
 
