@@ -14,8 +14,8 @@ class Pizza:
         
         
     @staticmethod
-    def casos_posibles(texto,lista: list):
-        if texto in lista:
+    def casos_posibles(evaluacion,ingredientes: list):
+        if evaluacion in ingredientes:
             # print("Lo logre")
             return True
         # print("Noooo")
@@ -23,22 +23,22 @@ class Pizza:
     
     
     def realizar_pedido(self):
-        self.i_proteico = input("Por favor ingrese el tipo de proteína: ")
-        self.vegetal_1 =  input("Por favor ingrese el primer ingrediente vegetal: ")
-        self.vegetal_2 =  input("Por favor ingrese el segundo ingrediente vegetal: ")
-        self.t_masa =  input("Por favor ingrese el tipo de masa: ")
+        self.i_proteico = input("Por favor ingrese el tipo de proteína (pollo, vacuno, carne vegetal): ")
+        self.vegetal_1 =  input("Por favor ingrese el primer ingrediente vegetal (tomates, aceitunas, champiñones): ")
+        self.vegetal_2 =  input("Por favor ingrese el segundo ingrediente vegetal (tomates, aceitunas, champiñones): ")
+        self.t_masa =  input("Por favor ingrese el tipo de masa (tradicional, delgada): ")
         
-        v_1 = Pizza.casos_posibles(texto=self.i_proteico, lista=proteinas)
-        v_2 = Pizza.casos_posibles(texto=self.vegetal_1, lista=vegetales)
-        v_3 = Pizza.casos_posibles(texto=self.vegetal_2, lista=vegetales)
-        v_4 = Pizza.casos_posibles(texto=self.t_masa, lista=masa)
+        v_1 = Pizza.casos_posibles(self.i_proteico, proteinas)
+        v_2 = Pizza.casos_posibles(self.vegetal_1,vegetales)
+        v_3 = Pizza.casos_posibles(self.vegetal_2, vegetales)
+        v_4 = Pizza.casos_posibles(self.t_masa, masa)
 
         lista_respuesta = [v_1, v_2, v_3, v_4]
 
         if False in lista_respuesta:
             self.pizza_valida = False
-            print("Existe al menos un false")
+            # print("Existe al menos un false")
         else:
             self.pizza_valida = True
-            print("Todo es True")
+            # print("Todo es True")
             
